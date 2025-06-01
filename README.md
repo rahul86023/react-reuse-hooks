@@ -1,6 +1,6 @@
 ﻿# ⚛️ react-reuse-hooks
 
-A lightweight and powerful collection of **30+ reusable custom React hooks** to supercharge your development. Simplify your logic for state management, side effects, performance optimizations, form handling, storage, and more — all in one compact package.
+A lightweight and powerful collection of **28+ reusable custom React hooks** to supercharge your development. Simplify your logic for state management, side effects, performance optimizations, form handling, storage, and more — all in one compact package.
 
 Created with ❤️ by **Rahul Chaurasia**
 
@@ -18,86 +18,37 @@ yarn add react-reuse-hooks
 
 ## 📚 Hook Usage Summary Table
 
-| Hook                   | Description                  | Example Usage                                                 |
-| ---------------------- | ---------------------------- | ------------------------------------------------------------- |
-| `useLocalStorage`      | Sync state with localStorage | `const [value, setValue] = useLocalStorage('key', 'default')` |
-| `useDebounce`          | Debounce a value             | `const debounced = useDebounce(inputValue, 500)`              |
-| `useToggle`            | Toggle a boolean             | `const [isOn, toggle] = useToggle(false)`                     |
-| `useClickOutside`      | Detect outside clicks        | `useClickOutside(ref, () => alert('Clicked outside!'))`       |
-| `useThrottle`          | Throttle a value update      | `const throttled = useThrottle(inputValue, 300)`              |
-| `usePrevious`          | Get previous value           | `const prev = usePrevious(value)`                             |
-| `useTimeout`           | Run function after delay     | `useTimeout(() => alert('Hello'), 1000)`                      |
-| `useUpdateEffect`      | Effect only on update        | `useUpdateEffect(() => {}, [count])`                          |
-| `useIsFirstRender`     | Check first render           | `const first = useIsFirstRender()`                            |
-| `useHover`             | Detect hover                 | `const [ref, hovered] = useHover()`                           |
-| `useInterval`          | Run function at intervals    | `useInterval(() => console.log('Tick'), 1000)`                |
-| `useOnlineStatus`      | Track online status          | `const online = useOnlineStatus()`                            |
-| `useCopyToClipboard`   | Copy text to clipboard       | `const [copied, copy] = useCopyToClipboard()`                 |
-| `useDarkMode`          | Toggle dark mode             | `const [darkMode, toggleDarkMode] = useDarkMode()`            |
-| `useDocumentTitle`     | Set document title           | `useDocumentTitle('My App')`                                  |
-| `useScrollPosition`    | Get scroll position          | `const pos = useScrollPosition()`                             |
-| `useWindowSize`        | Get window size              | `const { width, height } = useWindowSize()`                   |
-| `useEventListener`     | Add event listener           | `useEventListener('resize', handleResize)`                    |
-| `useOnScreen`          | Detect element visibility    | `const visible = useOnScreen(ref)`                            |
-| `useWhyDidYouUpdate`   | Debug re-renders             | `useWhyDidYouUpdate('MyComponent', props)`                    |
-| `useDeepCompareEffect` | Deep compare dependencies    | `useDeepCompareEffect(() => {}, [obj])`                       |
-| `useMediaQuery`        | Media query matcher          | `const matches = useMediaQuery('(max-width: 768px)')`         |
-| `useLockBodyScroll`    | Lock body scroll             | `useLockBodyScroll()`                                         |
-| `useLongPress`         | Handle long press events     | `const bind = useLongPress(callback, { delay: 500 })`         |
-| `useFocus`             | Handle focus state           | `const [ref, focused] = useFocus()`                           |
-| `useGeolocation`       | Get geolocation              | `const { latitude, longitude } = useGeolocation()`            |
-| `useBatteryStatus`     | Monitor battery status       | `const battery = useBatteryStatus()`                          |
-| `useNetworkStatus`     | Network status checker       | `const isOnline = useNetworkStatus()`                         |
-| `useIdle`              | Detect user idle             | `const isIdle = useIdle(3000)`                                |
-| `useEffectOnce`        | Effect that runs once        | `useEffectOnce(() => init())`                                 |
+| Hook                   | Description                    | Example Usage                                                    |
+| ---------------------- | ------------------------------ | ---------------------------------------------------------------- |
+| `useLocalStorage`      | Sync state with localStorage   | `const [value, setValue] = useLocalStorage('key', 'default')`    |
+| `useDebounce`          | Debounce a value               | `const debounced = useDebounce(inputValue, 500)`                 |
+| `useToggle`            | Toggle a boolean               | `const [isOn, toggle] = useToggle(false)`                        |
+| `useClickOutside`      | Detect outside clicks          | `useClickOutside(ref, () => alert('Clicked outside!'))`          |
+| `useThrottle`          | Throttle a value update        | `const throttled = useThrottle(inputValue, 300)`                 |
+| `usePrevious`          | Get previous value             | `const prev = usePrevious(value)`                                |
+| `useTimeout`           | Run function after delay       | `useTimeout(() => alert('Hello'), 1000)`                         |
+| `useUpdateEffect`      | Effect only on update          | `useUpdateEffect(() => {}, [count])`                             |
+| `useHover`             | Detect hover                   | `const [ref, hovered] = useHover()`                              |
+| `useOnlineStatus`      | Track online status            | `const online = useOnlineStatus()`                               |
+| `useCopyToClipboard`   | Copy text to clipboard         | `const [copied, copy] = useCopyToClipboard()`                    |
+| `useClipboard`         | Also allows clipboard copying  | `const [copied, setClipboard] = useClipboard()`                  |
+| `useDarkMode`          | Toggle dark mode               | `const [darkMode, toggleDarkMode] = useDarkMode()`               |
+| `useScrollPosition`    | Get scroll position            | `const pos = useScrollPosition()`                                |
+| `useWindowSize`        | Get window size                | `const { width, height } = useWindowSize()`                      |
+| `useEventListener`     | Add event listener             | `useEventListener('resize', handleResize)`                       |
+| `useOnScreen`          | Detect element visibility      | `const visible = useOnScreen(ref)`                               |
+| `useWhyDidYouUpdate`   | Debug re-renders               | `useWhyDidYouUpdate('MyComponent', props)`                       |
+| `useFocus`             | Handle focus state             | `const [ref, focused] = useFocus()`                              |
+| `useGeolocation`       | Get geolocation                | `const { latitude, longitude } = useGeolocation()`               |
+| `useElementSize`       | Get element dimensions         | `const [ref, size] = useElementSize()`                           |
+| `useDeviceOrientation` | Get device orientation data    | `const { alpha, beta, gamma } = useDeviceOrientation()`          |
+| `useForceUpdate`       | Force re-render                | `const forceUpdate = useForceUpdate()`                           |
+| `useInput`             | Manage input field logic       | `const { value, onChange, reset } = useInput()`                  |
+| `useStateWithCallback` | State with callback on update  | `const [count, setCount] = useStateWithCallback(0, cb)`          |
+| `useSessionStorage`    | Use session storage like state | `const [data, setData] = useSessionStorage('key', initialValue)` |
+| `useKeyPress`          | Detect specific key press      | `const isEnter = useKeyPress('Enter')`                           |
+| `useCookie`            | Manage browser cookies         | `const [cookie, setCookie] = useCookie('user')`                  |
 
----
-
-## ✨ Full Example Usage
-
-```bash
-npx create-react-app my-app
-cd my-app
-npm install react-reuse-hooks
-```
-
-### `App.js`
-
-```jsx
-import React, { useState, useRef } from 'react';
-import {
-  useLocalStorage,
-  useDebounce,
-  useThrottle,
-  useToggle,
-  useClickOutside
-} from 'react-reuse-hooks';
-
-function App() {
-  const [name, setName] = useLocalStorage('name', 'Rahul');
-  const [isDark, toggleDark] = useToggle();
-  const [input, setInput] = useState('');
-  const debounced = useDebounce(input, 300);
-  const throttled = useThrottle(input, 300);
-  const modalRef = useRef();
-
-  useClickOutside(modalRef, () => console.log('Clicked outside modal'));
-
-  return (
-    <div>
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
-      <p>Debounced: {debounced}</p>
-      <p>Throttled: {throttled}</p>
-      <button onClick={toggleDark}>{isDark ? 'Disable' : 'Enable'} Dark Mode</button>
-      <div ref={modalRef}>Click outside me!</div>
-    </div>
-  );
-}
-
-export default App;
-```
-
----
 
 ## 📚 My Bestselling Tech Books on Amazon Kindle
 

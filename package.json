@@ -1,6 +1,6 @@
 {
   "name": "react-reuse-hooks",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "type": "module",
   "description": "A collection of 30+ production-ready reusable React hooks for web apps, covering state, effects, media, forms, and utilities.",
   "main": "dist/index.js",
