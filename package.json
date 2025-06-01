@@ -1,8 +1,8 @@
 {
   "name": "react-reuse-hooks",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "description": "Reusable React Hooks",
+  "description": "A collection of 30+ production-ready reusable React hooks for web apps, covering state, effects, media, forms, and utilities.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -14,16 +14,41 @@
   },
   "keywords": [
     "react",
-    "components",
-    "reusable",
-    "header",
-    "footer",
-    "sidebar",
-    "storybook",
-    "typescript"
+    "react-hooks",
+    "custom-hooks",
+    "reusable-hooks",
+    "hooks-library",
+    "react-utils",
+    "web-apis",
+    "dark-mode",
+    "geolocation",
+    "clipboard",
+    "localstorage",
+    "sessionstorage",
+    "cookies",
+    "forms",
+    "input-handling",
+    "device-orientation",
+    "window-size",
+    "online-status",
+    "state-management",
+    "frontend",
+    "javascript"
   ],
-  "author": "Rahul Chaurasia",
-  "license": "ISC",
+  "author": {
+    "name": "Rahul Chaurasia",
+    "email": "rahulchaurasia1410@gmail.com",
+    "url": "https://rahulchaurasiaportfolio.netlify.app"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahul86023/react-reuse-hooks"
+  },
+  "bugs": {
+    "url": "https://github.com/rahul86023/react-reuse-hooks/issues"
+  },
+  "homepage": "https://github.com/rahul86023/react-reuse-hooks#readme",
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
@@ -35,7 +60,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
-       "@types/react": "^18.2.58",
+    "@types/react": "^18.2.58",
     "@types/react-dom": "^18.2.19",
     "postcss": "^8.5.3",
     "react": "^18.2.0",
